@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bella Italia | Pizza & Pasta</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand logo" href="#">
+      Bella <span>Italia.</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar" aria-controls="mainNavbar"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pizza">Pizza</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pasta">Pasta</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      </ul>
+
+      <button class="btn cart-button" data-bs-toggle="offcanvas"
+        data-bs-target="#cartCanvas" aria-controls="cartCanvas">
+        <i class="bi bi-bag"></i>
+        My Order
+        <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <span class="hero-tag">AUTHENTIC ITALIAN TASTE</span>
+    <h1>Made with Love.<br>Served with Passion.</h1>
+    <p>Discover the true taste of Italy with our delicious pizzas and fresh pasta.</p>
+    <a href="#menu" class="btn main-btn">Explore Our Menu</a>
+  </div>
+</header>
+
+<!-- Introduction -->
+<section class="intro-section text-center container">
+  <span class="section-subtitle">WELCOME TO BELLA ITALIA</span>
+  <h2>Fresh Ingredients. Italian Tradition.</h2>
+  <p>
+    Enjoy authentic Italian recipes prepared with fresh ingredients,
+    traditional flavors, and a passion for great food.
+  </p>
+</section>
+
+<!-- Menu -->
+<main id="menu" class="container menu-section">
+
+  <!-- Pizza -->
+  <section id="pizza" class="menu-category">
+    <div class="category-heading">
+      <div>
+        <span class="section-subtitle">STRAIGHT FROM THE OVEN</span>
+        <h2>Our Pizza <span>🍕</span></h2>
+        <p>Handcrafted pizza with fresh toppings and delicious cheese.</p>
+      </div>
+    </div>
+
+    <div class="row g-4" id="pizzaProducts"></div>
+  </section>
+
+  <!-- Pasta -->
+  <section id="pasta" class="menu-category">
+    <div class="category-heading">
+      <div>
+        <span class="section-subtitle">A TASTE OF ITALY</span>
+        <h2>Our Pasta <span>🍝</span></h2>
+        <p>Classic Italian pasta made with rich and fresh sauces.</p>
+      </div>
+    </div>
+
+    <div class="row g-4" id="pastaProducts"></div>
+  </section>
+
+</main>
+
+<!-- About -->
+<section class="about-section" id="about">
+  <div class="container text-center">
+    <span class="section-subtitle">OUR STORY</span>
+    <h2>A Little Taste of Italy</h2>
+    <p>
+      At Bella Italia, we believe great food brings people together.
+      Every pizza and pasta dish is prepared with care, quality ingredients,
+      and authentic Italian inspiration.
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container text-center">
+    <a class="logo footer-logo" href="#">Bella <span>Italia.</span></a>
+    <p>Authentic Italian Pizza & Pasta</p>
+    <div class="social-links">
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+    <p class="copyright">© 2026 Bella Italia. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Shopping Cart -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas"
+  aria-labelledby="cartTitle">
+
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="cartTitle">
+      <i class="bi bi-bag-check"></i> Your Order
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <div id="cartItems">
+      <div class="empty-cart text-center">
+        <i class="bi bi-basket"></i>
+        <p>Your cart is empty.</p>
+      </div>
+    </div>
+
+    <div class="cart-summary">
+      <div class="d-flex justify-content-between mb-3">
+        <strong>Total</strong>
+        <strong id="cartTotal">AED 0.00</strong>
+      </div>
+
+      <button class="btn whatsapp-btn w-100" id="checkoutButton">
+        <i class="bi bi-whatsapp"></i>
+        Order via WhatsApp
+      </button>
+
+      <small class="text-muted d-block mt-2">
+        Your order will be sent directly to our WhatsApp.
+      </small>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
